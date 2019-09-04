@@ -28,24 +28,24 @@ Best_colors <-c("darkgray", "blue","goldenrod", "green", "magenta", "orange", 'c
 
 ## Set working directory whre the `.rds` files from dada2 output are
 ```{r}
-setwd("~/Documents/Manuscripts/AZIZ TCS/Analysis")
+setwd("~/Documents/Manuscripts/AZIZ TCS/Analysis/")
 ```
 
 ## Import sample metadata
 ```{r}
-sdata=as.csv("Combined_metadata.csv", row.names = 1, header = TRUE, sep = ",", check.names = TRUE, stringsAsFactors = TRUE)
+sdata=as.csv("../Combined_metadata.csv", row.names = 1, header = TRUE, sep = ",", check.names = TRUE, stringsAsFactors = TRUE)
 samdata=sample_data(sdata)
 ```
 
 ## Import chimera checked ASV table from dada2
 ```{r}
-seqtab.nochim=readRDS("seqtabnochim.rds")
+seqtab.nochim=readRDS("../seqtabnochim.rds")
 seqtab=otu_table(seqtab.nochim,taxa_are_rows = FALSE)
 ```
 
 ## Import taxa assignments for ASVs from dada2
 ```{r}
-taxasp=readRDS("taxasp.rds")
+taxasp=readRDS("../taxasp.rds")
 taxa=tax_table(taxasp)
 ```
 
